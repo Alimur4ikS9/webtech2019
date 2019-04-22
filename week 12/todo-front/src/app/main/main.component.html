@@ -2,7 +2,7 @@
   <div class="row mt-5">
     <div class="col-lg-4">
       <button type="button" class="btn btn-primary m-2" (click)="changeMode('create_list')">Create Task List</button>
-      <h1>Lists</h1>
+      <h1>Task Lists</h1>
       <div class="card" style="width: 20rem;">
         <ul class="list-group list-group-flush">
           <li class="list-group-item" *ngFor="let tl of task_lists">
@@ -18,7 +18,7 @@
       <ng-container *ngIf="mode=='tasks' || mode=='create_task' || mode=='update_task' || mode=='task'">
         <h1 *ngIf="current_task_list">Tasks of {{current_task_list.name}}</h1>
         <button type="button" class="btn btn-primary m-2" (click)="changeMode('create_task')">Create Task</button>
-        <div *ngFor="let t of tasks" class="card w-75">
+        <div *ngFor="let t of tasks">
           <button type="button" class="btn btn-success m-2" (click)="getTask(t)">{{t.name}}</button>
           <div *ngIf="current_task">
             <div *ngIf="current_task.id == t.id" class="card-body">
